@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Quiz of Kings - TON</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="https://unpkg.com/@tonconnect/sdk@latest/dist/tonconnect-sdk.min.js"></script>
+</head>
+<body>
+  <h1>🎮 Quiz of Kings</h1>
+  <button id="connect-btn">🔗 اتصال به کیف پول</button>
+
+  <script>
+    const tg = window.Telegram.WebApp;
+    tg.expand();
+
+    const tonConnect = new TON_CONNECT.TonConnect();
+    document.getElementById("connect-btn").onclick = async () => {
+      await tonConnect.connectWallet();
+      const address = (await tonConnect.getWalletInfo()).account.address;
+      alert("کیف پول وصل شد:\n" + address);
+    };
+  </script>
+</body>
+</html>
