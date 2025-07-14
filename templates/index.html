@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کوییز بات</title>
+  <style>
+    body {
+      font-family: 'Tahoma', sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+      direction: rtl;
+      text-align: center;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>🎮 خوش آمدی به بازی کوییز!</h1>
+    <p>برای شروع، روی دکمه زیر بزن</p>
+    <button onclick="startQuiz()">شروع کوییز</button>
+  </div>
+
+  <script>
+    function startQuiz() {
+      Telegram.WebApp.close();  // این خط برای بستن WebApp بعد از انتخاب یا می‌تونی redirect بزنی
+      // یا می‌تونی کار دیگه‌ای اینجا انجام بدی
+    }
+
+    Telegram.WebApp.ready(); // برای اطمینان از آمادگی محیط
+  </script>
+
+</body>
+</html>
